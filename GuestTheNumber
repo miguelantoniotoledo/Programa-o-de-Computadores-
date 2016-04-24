@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h> //essa biblioteca adciona o contador do processador//
+
+int main(){
+	
+	int n,i,x;
+	srand(time(NULL)); // aqui o rand vai variar conforme o tempo do processador//
+	
+	printf("\t Vamos brincar!!")
+	printf("\t \t Advinhe o numero que pensei!!! \n");
+	printf("Está entre 0 e 100...");
+	printf("Você tem 10 tentativas!! =D");
+	n=rand()%101; //aqui o computador armazena em n o numero randomico//
+	
+	i=1;
+	do{ // aqui vamos testas as possibilidades//
+		printf("Tentativa %d \n",i);
+		printf("Digite o numero desejado: \n");
+		scanf("%d",x);
+			if(x<n){
+				printf("O meu numero eh maior!!! \n"); //dica 1//
+			} else {
+				if(x>n) {
+					printf("O meu numero eh menor!!! \n"); //dica 2//
+				} else {
+					printf("Você acertou o numero!!! You rock!!! \n"); //resultado final se acertar//
+					
+				}
+			}
+			i++;
+	}while(x!=n&&i<=10); //testamos ate o numero igualar ao armazenado pelo programa ou ate 10 tentativas//
+	printf("Você perdeu!! Looooooser!!!"); //se voce perder...//
+	
+	return 0;
+}
